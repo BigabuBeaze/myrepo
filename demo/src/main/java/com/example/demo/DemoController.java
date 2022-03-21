@@ -21,18 +21,7 @@ public class DemoController {
     @GetMapping("/")
     public String main(Model model) {
         model.addAttribute("message", startingMessages.get(new Random().nextInt(4 - 0 + 1) + 0));
-        model.addAttribute("placeholderImage", "yesser");
 
         return "index";
-    }
-
-    @GetMapping("/hello")
-    public String mainWithParam(
-            @RequestParam(name = "name", required = false, defaultValue = "")
-                    String name, Model model) {
-
-        model.addAttribute("message", name);
-
-        return "index"; //view
     }
 }
